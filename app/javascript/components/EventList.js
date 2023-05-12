@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 const EventList = ({events}) => {
   const renderEvent = (eventArray) => {
@@ -7,9 +8,11 @@ const EventList = ({events}) => {
 
     return eventArray.map((event) => (
       <li key={event.id}>
-        {event.event_date}
-        {' - '}
-        {event.event_type}
+        <Link to={`/events/${event.id}`}>
+          {event.event_date}
+          {' - '}
+          {event.event_type}
+        </Link>
       </li>
     ));
   };
@@ -21,6 +24,7 @@ const EventList = ({events}) => {
     </section>
   );
 };
+
 
 EventList.propTypes = {
   events: PropTypes.arrayOf(PropTypes.shape({
