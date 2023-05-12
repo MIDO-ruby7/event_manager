@@ -18,7 +18,7 @@ const EventList = ({events}) => {
   };
 
   return (
-    <section>
+    <section className='eventList'>
       <h2>Events</h2>
       <ul>{renderEvent(events)}</ul>
     </section>
