@@ -1,12 +1,9 @@
 import { Application } from "@hotwired/stimulus"
 
-import React from "react";
-import { createRoot } from "react-dom/client";
-import HelloMessage from "../components/App";
+const application = Application.start()
 
-const container = document.getElementById("root");
-const root = createRoot(container);
+// Configure Stimulus development experience
+application.debug = false
+window.Stimulus   = application
 
-document.addEventListener("DOMContentLoaded", () => {
-  root.render(<HelloMessage name="World" />);
-});
+export { application }
